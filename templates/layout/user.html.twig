@@ -1,0 +1,15 @@
+{% extends 'layout/base.html.twig' %}
+
+{% block body %}
+    <body>
+        {% include 'layout/parts/header.html.twig' %}
+
+        <main class="flex-grow px-6 md:px-12 py-8">
+            {% block content %}
+                Mon layout user
+            {% endblock %}
+        </main>
+
+        {% include 'layout/parts/footer.html.twig' %}
+    </body>
+{% endblock %}

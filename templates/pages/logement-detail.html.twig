@@ -1,0 +1,242 @@
+{% extends 'layout/user.html.twig' %}
+
+{% block content %}
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        <div class="lg:col-span-2">
+            {% set images = [
+                'https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=1000&h=800&fit=crop',
+                'https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=1000&h=800&fit=crop',
+                'https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=1000&h=800&fit=crop',
+                'https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=1000&h=800&fit=crop',
+                'https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=1000&h=800&fit=crop'
+            ] %}
+
+            <div class="grid grid-cols-4 gap-2 rounded-lg overflow-hidden mb-8 h-96">
+                <div class="col-span-2 row-span-2">
+                    <img src="{{ images[0] }}" alt="Photo principale" class="w-full h-full object-cover">
+                </div>
+                {% for i in 1..4 %}
+                    <div>
+                        <img src="{{ images[i % images|length] }}" alt="Photo {{ i + 1 }}" class="w-full h-full object-cover">
+                    </div>
+                {% endfor %}
+            </div>
+
+            <div class="mb-8 pb-8 border-b border-gray-200">
+                <div class="flex justify-between items-start mb-4">
+                    <div>
+                        <h1 class="text-4xl font-bold text-gray-900 mb-2">Bel appartement au cœur de Paris</h1>
+                        <div class="flex items-center gap-2 text-gray-600">
+                            <span class="font-semibold">4.92</span>
+                            <span>⭐⭐⭐⭐⭐</span>
+                            <span>(128 avis)</span>
+                            <span class="text-gray-400">•</span>
+                            <span>Paris, France</span>
+                        </div>
+                    </div>
+                    <button class="text-2xl">🤍</button>
+                </div>
+            </div>
+
+            <div class="mb-8 pb-8 border-b border-gray-200">
+                <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
+                    <div class="flex items-center gap-3">
+                        <span class="text-2xl">🛏️</span>
+                        <div>
+                            <p class="font-semibold text-gray-900">4 chambres</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <span class="text-2xl">🛁</span>
+                        <div>
+                            <p class="font-semibold text-gray-900">3 salles de bain</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <span class="text-2xl">👥</span>
+                        <div>
+                            <p class="font-semibold text-gray-900">10 voyageurs</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <span class="text-2xl">🛏️</span>
+                        <div>
+                            <p class="font-semibold text-gray-900">6 lits</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mb-8 pb-8 border-b border-gray-200">
+                <h2 class="text-2xl font-bold text-gray-900 mb-4">À propos du logement</h2>
+                <p class="text-gray-700 leading-relaxed mb-4">
+                    Bienvenue dans cet élégant appartement parisien situé dans le cœur vibrant du Marais. Entièrement rénové, il combine le charme parisien avec le confort moderne. Idéal pour les familles ou groupes d'amis, cet appartement spacieux offre tout ce dont vous avez besoin pour un séjour inoubliable à Paris.
+                </p>
+                <button class="text-brand hover:underline font-semibold">Afficher plus</button>
+            </div>
+
+            <div class="mb-8 pb-8 border-b border-gray-200">
+                <h2 class="text-2xl font-bold text-gray-900 mb-4">Équipements</h2>
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="flex items-center gap-3">
+                        <span>✓</span>
+                        <span>Wifi gratuit</span>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <span>✓</span>
+                        <span>Cuisine équipée</span>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <span>✓</span>
+                        <span>Air conditionné</span>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <span>✓</span>
+                        <span>Chauffage</span>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <span>✓</span>
+                        <span>TV avec câble</span>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <span>✓</span>
+                        <span>Lave-linge</span>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <span>✓</span>
+                        <span>Ascenseur</span>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <span>✓</span>
+                        <span>Parking</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mb-8 pb-8 border-b border-gray-200">
+                <h2 class="text-2xl font-bold text-gray-900 mb-4">Politique d'annulation</h2>
+                <div class="bg-gray-50 p-4 rounded-lg">
+                    <p class="font-semibold text-gray-900 mb-2">Annulation flexible</p>
+                    <p class="text-gray-700 text-sm">Détail : Remboursement intégral si vous annulez jusqu'à 5 jours avant l'arrivée. Après, les frais de réservation ne sont pas remboursés.</p>
+                </div>
+            </div>
+
+            <div>
+                <h2 class="text-2xl font-bold text-gray-900 mb-4">Avis voyageurs (128)</h2>
+                <div class="space-y-4">
+                    {% for i in 1..3 %}
+                        <div class="pb-4 border-b border-gray-200">
+                            <div class="flex items-center justify-between mb-2">
+                                <div class="flex items-center gap-3">
+                                    <div class="w-12 h-12 bg-gray-300 rounded-full"></div>
+                                    <div>
+                                        <p class="font-semibold text-gray-900">Client Vérifié</p>
+                                        <p class="text-sm text-gray-600">Il y a 2 mois</p>
+                                    </div>
+                                </div>
+                                <span class="font-semibold">⭐⭐⭐⭐⭐</span>
+                            </div>
+                            <p class="text-gray-700">Un séjour exceptionnel ! L'appartement est exactement comme présenté. Le quartier est merveilleux et l'hôte très réactif. Je recommande vivement !</p>
+                        </div>
+                    {% endfor %}
+                    <button class="text-brand hover:underline font-semibold">Afficher tous les avis</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="lg:col-span-1">
+            <div class="sticky top-24 bg-white border border-gray-300 rounded-lg p-6 shadow-lg">
+                <div class="mb-6 pb-6 border-b border-gray-200">
+                    <div class="flex items-baseline gap-2 mb-2">
+                        <span class="text-3xl font-bold text-gray-900">125 €</span>
+                        <span class="text-gray-600">/ nuit</span>
+                    </div>
+                    <div class="flex items-center gap-2 text-sm text-gray-600">
+                        <span>⭐⭐⭐⭐⭐</span>
+                        <span>(128 avis)</span>
+                    </div>
+                </div>
+
+                <form method="POST" action="" class="space-y-4">
+                    <div>
+                        <label class="block text-sm font-semibold text-gray-900 mb-2">Arrivée</label>
+                        <input type="date" name="checkin_date" required class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand focus:border-transparent">
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-semibold text-gray-900 mb-2">Départ</label>
+                        <input type="date" name="checkout_date" required class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand focus:border-transparent">
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-semibold text-gray-900 mb-2">Voyageurs</label>
+                        <select name="guests_count" required class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand focus:border-transparent">
+                            <option value="">Sélectionner</option>
+                            <option value="1">1 voyageur</option>
+                            <option value="2">2 voyageurs</option>
+                            <option value="3">3 voyageurs</option>
+                            <option value="4">4 voyageurs</option>
+                            <option value="5">5 voyageurs</option>
+                            <option value="6">6 voyageurs</option>
+                            <option value="7">7 voyageurs</option>
+                            <option value="8">8 voyageurs</option>
+                            <option value="9">9 voyageurs</option>
+                            <option value="10">10 voyageurs</option>
+                        </select>
+                    </div>
+
+                    <div class="bg-gray-50 p-4 rounded-lg space-y-2 text-sm">
+                        <div class="flex justify-between">
+                            <span class="text-gray-600">125 € × 5 nuits</span>
+                            <span class="text-gray-900 font-semibold">625 €</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-gray-600">Frais de nettoyage</span>
+                            <span class="text-gray-900 font-semibold">50 €</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-gray-600">Frais de service</span>
+                            <span class="text-gray-900 font-semibold">75 €</span>
+                        </div>
+                        <div class="border-t border-gray-200 pt-2 flex justify-between font-semibold">
+                            <span>Total</span>
+                            <span class="text-gray-900">750 €</span>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="w-full px-6 py-3 bg-brand hover:bg-brandHover text-white font-bold rounded-lg transition">
+                        Réserver
+                    </button>
+
+                    <p class="text-center text-sm text-gray-600">Vous ne serez débité que lorsque la réservation sera confirmée</p>
+
+                    <button type="button" class="w-full px-6 py-3 border-2 border-gray-300 text-gray-900 font-semibold rounded-lg hover:bg-gray-50 transition">
+                        Contacter l'hôte
+                    </button>
+                </form>
+
+                <div class="mt-6 pt-6 border-t border-gray-200">
+                    <p class="text-xs text-gray-600 text-center">
+                        En cliquant sur le bouton, vous confirmez que vous avez accepté les <a href="#" class="underline">Conditions d'utilisation</a> et <a href="#" class="underline">Politique de confidentialité</a>.
+                    </p>
+                </div>
+            </div>
+
+            <div class="mt-6 bg-white border border-gray-300 rounded-lg p-6">
+                <h3 class="font-bold text-gray-900 mb-4">Hôte : Marie D.</h3>
+                <div class="flex items-center gap-3 mb-4">
+                    <div class="w-16 h-16 bg-gray-300 rounded-full"></div>
+                    <div class="text-sm">
+                        <p class="font-semibold text-gray-900">⭐ 4.95 (245 avis)</p>
+                        <p class="text-gray-600">Hôte depuis 2018</p>
+                    </div>
+                </div>
+                <button class="w-full px-4 py-2 border border-gray-300 text-gray-900 font-semibold rounded-lg hover:bg-gray-50 transition">
+                    Voir le profil
+                </button>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+

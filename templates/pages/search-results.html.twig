@@ -1,0 +1,158 @@
+{% extends 'layout/user.html.twig' %}
+
+{% block content %}
+    <div class="mb-8">
+        <div class="flex flex-col sm:flex-row gap-4 items-start sm:items-center justify-between">
+            <div>
+                <h1 class="text-2xl sm:text-3xl font-bold text-gray-900">Résultats de recherche</h1>
+                <p class="text-gray-600 mt-1">Trouvez votre logement idéal</p>
+            </div>
+            <div class="flex gap-2 w-full sm:w-auto">
+                <select class="flex-1 sm:flex-none px-4 py-2 border border-gray-300 rounded-lg text-gray-700 hover:border-gray-400 focus:outline-none focus:ring-2 focus:ring-brand focus:border-transparent transition">
+                    <option value="">Trier par</option>
+                    <option value="popularity">Les plus recherchés</option>
+                    <option value="price-asc">Prix : bas à haut</option>
+                    <option value="price-desc">Prix : haut à bas</option>
+                    <option value="rating">Note la plus élevée</option>
+                    <option value="newest">Nouveautés</option>
+                </select>
+            </div>
+        </div>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-4 gap-8">
+        <div class="lg:col-span-1">
+            <div class="sticky top-24 space-y-6 bg-white p-6 rounded-lg border border-gray-200">
+                <h3 class="text-lg font-semibold text-gray-900">Filtres</h3>
+
+                <div>
+                    <label class="block text-sm font-semibold text-gray-900 mb-3">Fourchette de prix</label>
+                    <div class="space-y-3">
+                        <input type="range" min="0" max="500" value="500" class="w-full accent-brand cursor-pointer">
+                        <div class="flex justify-between text-sm text-gray-600">
+                            <span>0 €</span>
+                            <span class="font-semibold text-gray-900" id="price-value">500 € +</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <label class="block text-sm font-semibold text-gray-900 mb-3">Type de logement</label>
+                    <div class="space-y-2">
+                        <label class="flex items-center gap-3 cursor-pointer">
+                            <input type="checkbox" class="w-4 h-4 rounded border-gray-300 accent-brand cursor-pointer">
+                            <span class="text-sm text-gray-700">Appartement</span>
+                        </label>
+                        <label class="flex items-center gap-3 cursor-pointer">
+                            <input type="checkbox" class="w-4 h-4 rounded border-gray-300 accent-brand cursor-pointer">
+                            <span class="text-sm text-gray-700">Maison</span>
+                        </label>
+                        <label class="flex items-center gap-3 cursor-pointer">
+                            <input type="checkbox" class="w-4 h-4 rounded border-gray-300 accent-brand cursor-pointer">
+                            <span class="text-sm text-gray-700">Villa</span>
+                        </label>
+                        <label class="flex items-center gap-3 cursor-pointer">
+                            <input type="checkbox" class="w-4 h-4 rounded border-gray-300 accent-brand cursor-pointer">
+                            <span class="text-sm text-gray-700">Studio</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div>
+                    <label class="block text-sm font-semibold text-gray-900 mb-3">Nombre de chambres</label>
+                    <div class="space-y-2">
+                        <label class="flex items-center gap-3 cursor-pointer">
+                            <input type="checkbox" class="w-4 h-4 rounded border-gray-300 accent-brand cursor-pointer">
+                            <span class="text-sm text-gray-700">1 chambre</span>
+                        </label>
+                        <label class="flex items-center gap-3 cursor-pointer">
+                            <input type="checkbox" class="w-4 h-4 rounded border-gray-300 accent-brand cursor-pointer">
+                            <span class="text-sm text-gray-700">2 chambres</span>
+                        </label>
+                        <label class="flex items-center gap-3 cursor-pointer">
+                            <input type="checkbox" class="w-4 h-4 rounded border-gray-300 accent-brand cursor-pointer">
+                            <span class="text-sm text-gray-700">3+ chambres</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div>
+                    <label class="block text-sm font-semibold text-gray-900 mb-3">Note minimum</label>
+                    <div class="space-y-2">
+                        <label class="flex items-center gap-3 cursor-pointer">
+                            <input type="radio" name="rating" class="w-4 h-4 accent-brand cursor-pointer">
+                            <span class="text-sm text-gray-700">N'importe quel avis</span>
+                        </label>
+                        <label class="flex items-center gap-3 cursor-pointer">
+                            <input type="radio" name="rating" class="w-4 h-4 accent-brand cursor-pointer">
+                            <span class="text-sm text-gray-700">4.5+ ⭐</span>
+                        </label>
+                        <label class="flex items-center gap-3 cursor-pointer">
+                            <input type="radio" name="rating" class="w-4 h-4 accent-brand cursor-pointer">
+                            <span class="text-sm text-gray-700">4.7+ ⭐</span>
+                        </label>
+                        <label class="flex items-center gap-3 cursor-pointer">
+                            <input type="radio" name="rating" class="w-4 h-4 accent-brand cursor-pointer">
+                            <span class="text-sm text-gray-700">4.9+ ⭐</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div>
+                    <label class="flex items-center gap-3 cursor-pointer">
+                        <input type="checkbox" class="w-4 h-4 rounded border-gray-300 accent-brand cursor-pointer">
+                        <span class="text-sm font-semibold text-gray-900">Wifi gratuit</span>
+                    </label>
+                </div>
+
+                <div>
+                    <label class="flex items-center gap-3 cursor-pointer">
+                        <input type="checkbox" class="w-4 h-4 rounded border-gray-300 accent-brand cursor-pointer">
+                        <span class="text-sm font-semibold text-gray-900">Cuisine équipée</span>
+                    </label>
+                </div>
+
+                <div>
+                    <label class="flex items-center gap-3 cursor-pointer">
+                        <input type="checkbox" class="w-4 h-4 rounded border-gray-300 accent-brand cursor-pointer">
+                        <span class="text-sm font-semibold text-gray-900">Piscine</span>
+                    </label>
+                </div>
+
+                <button class="w-full px-4 py-2 bg-brand hover:bg-brandHover text-white font-semibold rounded-lg transition">
+                    Appliquer les filtres
+                </button>
+                <button class="w-full px-4 py-2 border border-gray-300 text-gray-700 font-semibold rounded-lg hover:border-gray-400 transition">
+                    Réinitialiser
+                </button>
+            </div>
+        </div>
+
+        <div class="lg:col-span-3">
+            <div class="mb-6 pb-6 border-b border-gray-200">
+                <p class="text-gray-600"><span class="font-semibold text-gray-900">1 234</span> logements trouvés</p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-10">
+                {% for logement in 1..12 %}
+                    {% include 'pages/parts/logement-card.html.twig' %}
+                {% endfor %}
+            </div>
+
+            <div class="mt-12 flex justify-center items-center gap-2">
+                <button class="px-4 py-2 border border-gray-300 rounded-lg text-gray-700 hover:bg-gray-50 transition" disabled>
+                    ← Précédent
+                </button>
+                <button class="px-3 py-2 rounded-lg bg-brand text-white font-semibold">1</button>
+                <button class="px-3 py-2 rounded-lg border border-gray-300 text-gray-700 hover:bg-gray-50 transition">2</button>
+                <button class="px-3 py-2 rounded-lg border border-gray-300 text-gray-700 hover:bg-gray-50 transition">3</button>
+                <span class="text-gray-600 px-2">...</span>
+                <button class="px-3 py-2 rounded-lg border border-gray-300 text-gray-700 hover:bg-gray-50 transition">10</button>
+                <button class="px-4 py-2 border border-gray-300 rounded-lg text-gray-700 hover:bg-gray-50 transition">
+                    Suivant →
+                </button>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+

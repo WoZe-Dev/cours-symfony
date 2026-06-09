@@ -1,0 +1,11 @@
+{% extends 'layout/base.html.twig' %}
+
+{% block body %}
+    <body class="bg-gray-50 font-sans antialiased text-gray-800 flex h-screen overflow-hidden">
+        {% include 'layout/parts/header_admin.html.twig' %}
+
+        {% block content %}
+            Mon layout user
+        {% endblock %}
+    </body>
+{% endblock %}

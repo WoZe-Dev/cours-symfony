@@ -9,8 +9,17 @@
 5. Générer les migrations et les exécuter pour créer la BDD
 6. Créer des fixtures (php ou YAML) pour peupler la BDD avec des données de test
 
-7. Générer un premier controller + générer un layout
+7. Générer un premier controller + générer un layout user
 8. Découper le template (héritage + sous-templates)
-9. Créer les controllers, CRUD etc adapter les vues
+9. Créer les controllers et pages pour : 
+   - Page d'accueil (listing des annonces)
+   - Page d'historique des reservations
+   - Page de détail d'une annonce
+   - Page de confirmation de reservation
+
+
+
+
 10. Faire l'authentification, mot de passe oublié, etc
-11. API, Asynchrone
+11. API, Asynchrone, Events, etc
+12. Tests unitaires, fonctionnels, etc
