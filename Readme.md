@@ -8,3 +8,9 @@
 4. Créer les entités Doctrine en fonction du schéma de BDD
 5. Générer les migrations et les exécuter pour créer la BDD
 6. Créer des fixtures (php ou YAML) pour peupler la BDD avec des données de test
+
+7. Générer un premier controller + générer un layout
+8. Découper le template (héritage + sous-templates)
+9. Créer les controllers, CRUD etc adapter les vues
+10. Faire l'authentification, mot de passe oublié, etc
+11. API, Asynchrone
